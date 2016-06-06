@@ -18,9 +18,9 @@ test("length", function() {
 
 test("splice", function() {
     var daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    var workingWeek = daysOfWeek.splice(__, __);
-    ok(workingWeek.equalTo([__]), 'what is the value of workingWeek?');
-    ok(daysOfWeek.equalTo([__]), 'what is the value of daysOfWeek?');
+    var workingWeek = daysOfWeek.splice(0,5);
+    ok(workingWeek.equalTo(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']), 'what is the value of workingWeek?');
+    ok(daysOfWeek.equalTo(['Saturday', 'Sunday']), 'what is the value of daysOfWeek?');
 });
 
 test("stack methods", function() {
@@ -28,8 +28,8 @@ test("stack methods", function() {
     stack.push("first");
     stack.push("second");
 
-    equal(__, stack.pop(), 'what will be the first value popped off the stack?');
-    equal(__, stack.pop(), 'what will be the second value popped off the stack?');
+    equal("second", stack.pop(), 'what will be the first value popped off the stack?');
+    equal("first", stack.pop(), 'what will be the second value popped off the stack?');
 });
 
 test("queue methods", function() {
@@ -38,6 +38,6 @@ test("queue methods", function() {
     queue.push("second");
     queue.unshift("third");
 
-    equal(__, queue.shift(), 'what will be shifted out first?');
-    equal(__, queue.shift(), 'what will be shifted out second?');
+    equal("third", queue.shift(), 'what will be shifted out first?');
+    equal("first", queue.shift(), 'what will be shifted out second?');
 });
